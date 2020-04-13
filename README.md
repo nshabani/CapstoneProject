@@ -16,6 +16,7 @@ So data preprocessing steps included:
 -	Removing columns with more than 20% missing values in reference dataset
 -	Removing rows with more than 20% missing values
 -	Replacing null values
+
 I took a quick look at distribution of 10 randomly pick features over both dataset, with a quick glance I could identify some differences between customers and general population.
 The next steps of data preprocessing were:
 -	Replacing nominal features with dummy variables. I only did that with features with less than 5 categories to prevent the dataset from being too large to handle. The rest of nominal variables were deleted.
