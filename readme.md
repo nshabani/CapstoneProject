@@ -22,7 +22,11 @@ The next steps of data preprocessing were:
 -	I used standard scaler to center and scale the data to be able to use PCA.
  
 ## Customer segmentation report
-The feature dimension of the dataset at this point was down from 366-369 to 289. To see if it can be reduced, I used principal component analysis. The result show that 180 component can explain more than 95% of variance, representing that there is correlation between features. Then, I re-fit a PCA instance with 180 components to perform the decided-on transformation.
+The feature dimension of the dataset at this point was down from 366-369 to 289. To see if it can be reduced, I used principal component analysis. The result show that 180 component can explain more than 95% of variance, representing that there is correlation between features. 
+
+![PCA1](PCA1.png)
+
+Then, I re-fit a PCA instance with 180 components to perform the decided-on transformation.
 I then checked the components to see if I can interpret them from feature weights. 
 The interpretation was not very straightforward since the feature definitions were not very clear, however, for instance I could say:
 - Component 1 was related to high income, business units with high share of car.
@@ -31,8 +35,17 @@ The interpretation was not very straightforward since the feature definitions we
 - Component 4 was related to transactions 
 - Component 5 was related to how traditional, cultural and religious minded a person is 
 
-In the next step, K-mean method was used for clustering azdias dataset. First, I used different number of clusters and checked sum of squared error. Having them in a elbow plot enabled me to pick appropriate K, which showed that 8 cluster is sufficient. The K-mean model with K=8 was fit to general population dataset and was used to make prediction of the cluster labels. Then the same model was used to transform and predict clusters for customers dataset. I then calculated the proportions of each cluster for the population dataset. I also include the data that was initially removed due to too many nulls when calculating the proportions and include this data as cluster -1.
-The same process was applied to customers dataset. And finally I compared the distribution of the frequencies over the clusters for population and customers dataset as was shown in graphs below. It showed that people in clusters 1 and 5 are more likely to be customers of the company. If we look at the components with the highest and lowest weights for these two clusters, we could see in both clusters, component 1 had the highest weight. As mentioned before, component 1 looked to be more related high income, business related people. So maybe focusing on these groups and looking more closely to component 1 can provide insights on potential customers.
+In the next step, K-mean method was used for clustering azdias dataset. First, I used different number of clusters and checked sum of squared error. Having them in a elbow plot enabled me to pick appropriate K, which showed that 8 cluster is sufficient. 
+
+![elbow_plot](elbow_plot.png)
+
+The K-mean model with K=8 was fit to general population dataset and was used to make prediction of the cluster labels. Then the same model was used to transform and predict clusters for customers dataset. I then calculated the proportions of each cluster for the population dataset. I also included the data that was initially removed due to too many nulls when calculating the proportions and included this data as cluster -1.
+The same process was applied to customers dataset. And finally I compared the distribution of the frequencies over the clusters for population and customers dataset as was shown in graphs below. It showed that people in clusters 1 and 5 are more likely to be customers of the company. 
+
+![clusters](clusters.png)
+
+
+If we look at the components with the highest and lowest weights for these two clusters, we could see in both clusters, component 1 had the highest weight. As mentioned before, component 1 looked to be more related high income, business related people. So maybe focusing on these groups and looking more closely to component 1 can provide insights on potential customers.
 ## Part 2: Supervised Learning Model
 
 Now that we found which parts of the population are more likely to be customers of the mail-order company, it was time to build a prediction model. Each of the rows in the "MAILOUT" data files represents an individual that was targeted for a mailout campaign. Ideally, we should be able to use the demographic information from each individual to decide whether or not it will be worth it to include that person in the campaign.
