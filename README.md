@@ -29,4 +29,5 @@ In summary the following points were found from this analysis:
 
 
 The full discussion and explanation for the project can be found [here](https://medium.com/@nazanin.shaebani/who-is-likely-to-be-our-customer-2586e266b7f1).
-Data prepe
+
+To run the project, open ArvatoProjectWorkbook.ipynb in Jupyter Notebook and follow the steps and comments. 
