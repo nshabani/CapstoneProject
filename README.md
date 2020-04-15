@@ -4,7 +4,7 @@
 In this project, the demographics data for customers of a mail-order sales company as well as demographics data of general population in Germany are provided. The objective is to compare the two dataset using unsupervised learning techniques to perform customer segmentation, and to identify the parts of the population that best describe the core customer base of the company. Then, apply what is learnt on a third dataset with demographics information for targets of a marketing campaign for the company, and use a model to predict which individuals are most likely to convert into becoming customers for the company.
 The data has been provided by Udacity partners at Bertelsmann Arvato Analytics, and represents a real-life data science task.
 
-##Methodology
+## Methodology
 My strategy to solve the problem includes following steps:
 - Data exploration to understand input data, definition of features and indicate their types (numeric vs categorical).
 - Find appropriate method to impute missing values and perform data preprocessing and feature engineering
