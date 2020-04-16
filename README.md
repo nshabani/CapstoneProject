@@ -11,6 +11,9 @@ My strategy to solve the problem includes following steps:
 - Customer segmentation using unsupervised learning
 - Develop predicting models based on the training set, define metrics for choosing between different methods, apply model to the test set, improve model, and compare results.
 
+These libraries are used in the code: numpy, pandas, matplotlib, sklearn and time
+
+
 Data preprocessing steps included:
 - Removing and replacing some features and values
 - Removing columns with more than 20% missing values in reference dataset
